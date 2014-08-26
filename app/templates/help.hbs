@@ -1,0 +1,16 @@
+{{#if currentQuestion}}
+  {{render 'question' currentQuestion}}
+{{else}}
+  <div id="new-ticket-form" class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 text-center">
+    <form class="form">
+      <label for="student-name" class="sr-only">Your name</label>
+      <div class="form-group">
+        {{input class="form-control" id="student-name" valueBinding='student' placeholder="Please enter your name"}}
+      </div>
+      <div class="form-group">
+        {{textarea class="form-control" rows="5" valueBinding='question' placeholder="Give a brief description of issue you are having."}}
+      </div>
+      <button class="btn btn-danger pull-right" type="submit"  {{action 'createTicket'}}>Help!</button>
+    </form>
+  </div>
+{{/if}}

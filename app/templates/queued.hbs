@@ -1,0 +1,9 @@
+<div id="queued" class="text-center col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+  {{#if open}}
+    <p class="lead">Thanks, {{student}}. Help is on the way.</p>
+    <p>Leave this page open while you continue working on the problem.</p>
+    <button class="btn btn-danger" {{action "closeTicket" this}}>Nevermind, we got it.</button>
+  {{else}}
+    <p class="lead">Your ticket has been closed.</p>
+  {{/if}}
+</div>

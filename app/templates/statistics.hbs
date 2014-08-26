@@ -1,0 +1,26 @@
+<div id='statistics'>
+  <h3 class="text-center sub-heading">Daily statistics</h3>
+  <div class="row">
+    <div class="text-center left-cell col-xs-6">
+      <span class="small-text">Closed</span><br>
+      <span class="large-text">{{numberOfTickets}}</span><br>
+      <span class="small-text">tickets</span>
+    </div>
+    <div class="text-center col-xs-6">
+      {{#if displaySeconds}}
+        <span class="small-text">Average wait time</span><br>
+        <span class="large-text">{{averageWaitTime}}</span><br>
+        <span class="small-text">seconds</span>
+      {{else}}
+        <span class="small-text">Average wait time</span><br>
+        <span class="large-text">{{averageWaitTimeInMinutes}}</span><br>
+        <span class="small-text">minutes</span>
+      {{/if}}
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <h4 class="text-center sub-heading">Tickets per hour</h3>
+      {{hourly-tickets-chart data=graphData style="height: 50px"}}
+  </div>
+</div>
