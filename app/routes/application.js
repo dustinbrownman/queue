@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 var ApplicationRoute = Ember.Route.extend({
-  setupController:function(controller, model){
+  setupController:function(){
     this.startGlobalTime();
   },
   startGlobalTime: function() {

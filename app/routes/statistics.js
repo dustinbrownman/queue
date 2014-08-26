@@ -6,4 +6,4 @@ var StatisticsRoute = Ember.Route.extend({
   }
 });
 
-export default StatisticsController;
+export default StatisticsRoute;
