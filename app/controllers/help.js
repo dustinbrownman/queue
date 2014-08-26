@@ -4,7 +4,7 @@ var HelpController = Ember.ObjectController.extend({
   actions: {
     createTicket: function() {
       var controller = this;
-      model = this.get('model');
+      var model = this.get('model');
       if (model.get('student') && model.get('question')) {
         model.set('open', true);
         model.set('createdAt', new Date());
