@@ -1,3 +1,107 @@
-html, body {
+.ember-application {
+  margin: 0;
+}
+
+body {
+  background-color: #ecf0f1;
+  font-family: 'Nixie One', cursive;
+  padding-top: 50px;
+}
+
+h2 {
+  font-family: 'Nixie One', cursive;
+}
+
+.page-header {
+  /*border-bottom: 1px solid #ccc;*/
+  margin: 0px auto;
+  padding-top: 9px;
+  background-color: #f05a26;
+  color: #fefefe;
+}
+
+.btn-danger {
+  background-color: #f05a26;
+}
+
+.home {
+  text-decoration: none;
+  color: #eee;
+  cursor: pointer;
+}
+
+.home:hover {
+  text-decoration: none;
+  color: #eee;
+  cursor: pointer;
+}
+
+#student-name {
+  width: 100%;
+}
+
+.queue li {
+  padding: 30px 20px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+.time-ago {
+  font-size: 80%;
+}
+
+#new-ticket-form, #question, #queued {
+  margin-top: 40px;
+}
+
+.student-name {
+  font-size: 150%;
+}
+
+.well {
+  margin-bottom: 10px
+}
+
+.question {
+  font-family: "Courier New", monospace;
+  margin-top: 20px
+}
+
+#statistics {
+  background-color: #fff;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.sub-heading {
+  margin-bottom: 20px;
+}
+
+.left-cell {
+  border-right: 1px solid #ccc;
+}
+
+.large-text {
+  font-size: 300%;
+}
+
+.small-text {
+  font-size: 80%;
+}
+
+.hourly-tickets-graph {
+  height: 200px;
   margin: 20px;
+}
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px) {
+  .page-header {
+    padding-top: 29px;
+  }
+
+  body {
+    padding-top: 70px;
+  }
 }
