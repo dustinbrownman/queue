@@ -5,7 +5,7 @@ var QueueController = Ember.ArrayController.extend({
   tickets: function() {
     var openTickets = this.get('model').filter(function(ticket) {
       return ticket.get('open');
-    })
+    });
 
     var orderedTickets = openTickets.sort(function(a, b) {
       if (a.get('createdAt') > b.get('createdAt')) {

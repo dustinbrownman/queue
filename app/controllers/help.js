@@ -18,9 +18,9 @@ var HelpController = Ember.ObjectController.extend({
     },
 
     nextQuestion: function() {
-      var questions = this.get('questions')
+      var questions = this.get('questions');
       var next = questions.shift();
-      this.set('currentQuestion', next)
+      this.set('currentQuestion', next);
     }
   },
 

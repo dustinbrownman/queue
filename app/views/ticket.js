@@ -2,13 +2,13 @@ import Ember from 'ember';
 
 var TicketView = Ember.View.extend({
   scrolling: false,
-  touchEnd: function(event) {
+  touchEnd: function() {
     if (!this.get('scrolling')) {
       this.get('controller').send('toggleExpanded');
     }
     this.set('scrolling', false);
   },
-  touchMove: function(event) {
+  touchMove: function() {
     this.set('scrolling', true);
   },
   click: function() {

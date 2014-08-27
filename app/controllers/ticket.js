@@ -1,3 +1,4 @@
+/* globals moment */
 import Ember from 'ember';
 
 var TicketController = Ember.ObjectController.extend({

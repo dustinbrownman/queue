@@ -1,3 +1,4 @@
+/* globals Morris */
 import Ember from 'ember';
 
 var HourlyTicketsChartComponent = Ember.Component.extend({
@@ -11,7 +12,7 @@ var HourlyTicketsChartComponent = Ember.Component.extend({
 
     this.graph = new Morris.Line({
       element: element,
-      data: this.get('data'),
+      data: self.get('data'),
       xkey: 'hour',
       ykeys: ['tickets'],
       labels: ['Tickets'],

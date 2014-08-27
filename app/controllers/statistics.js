@@ -1,3 +1,4 @@
+/* globals moment */
 import Ember from 'ember';
 
 var StatisticsController = Ember.ArrayController.extend({
@@ -16,7 +17,7 @@ var StatisticsController = Ember.ArrayController.extend({
   }.property('model.@each.open'),
 
   numberOfTickets: function() {
-    return this.get('todaysClosedTickets').length
+    return this.get('todaysClosedTickets').length;
   }.property('model.@each.open'),
 
   averageWaitTime: function() {
@@ -28,23 +29,23 @@ var StatisticsController = Ember.ArrayController.extend({
 
     var averageTime = waitTimes.reduce(function(sum, next) {
       return sum + next;
-    }) / waitTimes.length
+    }) / waitTimes.length;
 
     return Math.round(averageTime);
   }.property('model.@each.open'),
 
   averageWaitTimeInMinutes: function() {
-    return Math.round((this.get('averageWaitTime') / 60) * 10) / 10 // this rounds the number to 1 decimal place
+    return Math.round((this.get('averageWaitTime') / 60) * 10) / 10; // this rounds the number to 1 decimal place
   }.property('model.@each.open'),
 
   graphData: function() {
-    var graphData = []
+    var graphData = [];
     var todaysTickets = this.get('todaysClosedTickets');
 
     todaysTickets.forEach(function(ticket) {
       var formattedHour = moment(ticket.get('createdAt')).format("ha");
 
-      dataPointExisits = graphData.some(function(dataPoint) {
+      var dataPointExisits = graphData.some(function(dataPoint) {
         return dataPoint.hour === formattedHour;
       });
 
@@ -53,7 +54,7 @@ var StatisticsController = Ember.ArrayController.extend({
 
           if (dataPoint.hour === formattedHour) {
 
-            dataPoint.tickets += 1
+            dataPoint.tickets += 1;
           }
         });
       } else {
