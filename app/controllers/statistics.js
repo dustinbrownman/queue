@@ -22,9 +22,7 @@ var StatisticsController = Ember.ArrayController.extend({
 
   averageWaitTime: function() {
     var waitTimes = this.get('todaysClosedTickets').map(function(ticket) {
-      var createdAt = moment(ticket.get('createdAt'));
-      var closedAt = moment(ticket.get('closedAt'));
-      return closedAt.diff(createdAt, 'seconds');
+      return ticket.get('waitTime');
     });
 
     var averageTime = waitTimes.reduce(function(sum, next) {
