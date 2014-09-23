@@ -41,37 +41,28 @@ var StatisticsController = Ember.ArrayController.extend({
     var todaysTickets = this.get('todaysClosedTickets');
 
     todaysTickets.forEach(function(ticket) {
-      var formattedHour = moment(ticket.get('createdAt')).format("ha");
+      var hourNumber = ticket.get('hour');
+      var formattedHour = ticket.get('formattedHour');
 
-      var dataPointExisits = graphData.some(function(dataPoint) {
-        return dataPoint.hour === formattedHour;
+      var dataPointExists = graphData.some(function(dataPoint) {
+        return dataPoint.hourNumber === hourNumber;
       });
 
-      if (dataPointExisits) {
+      if (dataPointExists) {
         graphData.forEach(function(dataPoint) {
 
-          if (dataPoint.hour === formattedHour) {
+          if (dataPoint.hourNumber === hourNumber) {
 
             dataPoint.tickets += 1;
           }
         });
       } else {
-        graphData.push({ hour: formattedHour, tickets: 1 });
+        graphData.push({ hourNumber: ticket.get('hour'), hour: formattedHour, tickets: 1 });
       }
     });
 
     return graphData.sort(function(a, b) {
-      if (a.hour.slice(-2) !== b.hour.slice(-2)) {
-        if (a.hour.slice(-2) === 'am') {
-          return -1;
-        } else {
-          return 1;
-        }
-      } else {
-        var hour_a = parseInt(a.hour.slice(0, -2)) === 12 ? 0 : parseInt(a.hour.slice(0, -2));
-        var hour_b = parseInt(b.hour.slice(0, -2)) === 12 ? 0 : parseInt(b.hour.slice(0, -2));
-        return hour_a - hour_b;
-      }
+      return a.hourNumber - b.hourNumber;
     });
   // needs to return something like this [{hour: '8am', tickets: 5}, {hour: '9am', tickets: 7}]
   }.property('model.@each.open')

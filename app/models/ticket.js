@@ -12,7 +12,16 @@ var Ticket = DS.Model.extend({
     var createdAt = moment(this.get('createdAt'));
     var closedAt = moment(this.get('closedAt'));
     return closedAt.diff(createdAt, 'seconds');
-  }.property('createdAt', 'closedAt')
+  }.property('createdAt', 'closedAt'),
+
+  hour: function() {
+    var hour = moment(this.get('createdAt')).format("H");
+    return parseInt(hour);
+  }.property('createdAt'),
+
+  formattedHour: function() {
+    return moment(this.get('createdAt')).format("ha");
+  }.property('hour')
 });
 
 export default Ticket;
