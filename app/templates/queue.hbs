@@ -1,6 +1,6 @@
 <ul class="list-group queue">
-  {{#each tickets}}
-    {{render "ticket" this}}
+  {{#each ticket in tickets}}
+    {{ticket-component ticket=ticket}}
   {{/each}}
 </ul>
 <p class="text-center text-muted">{{#link-to 'statistics'}}View today's statistics{{/link-to}}</p>

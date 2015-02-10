@@ -1,0 +1,12 @@
+<li class="list-group-item">
+  <div>
+    <button class="btn btn-danger btn-sm pull-right" {{action "closeTicket"}}>close</button>
+    <span class="student-name">{{ticket.student}}</span><br>
+    {{time-ago time=ticket.createdAt}}
+    {{#if isExpanded}}
+      <div class="well question">
+        <p>{{ticket.question}}</p>
+      </div>
+    {{/if}}
+  </div>
+</li>

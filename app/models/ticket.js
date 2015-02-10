@@ -21,7 +21,11 @@ var Ticket = DS.Model.extend({
 
   formattedHour: function() {
     return moment(this.get('createdAt')).format("ha");
-  }.property('hour')
+  }.property('hour'),
+
+  timeAgo: function() {
+    return moment(this.get('createdAt')).fromNow();
+  }.property(),
 });
 
 export default Ticket;
