@@ -1,3 +1,4 @@
+/* globals moment */
 import Ember from 'ember';
 
 var TimeAgo = Ember.Component.extend({
