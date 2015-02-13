@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Queue</title>
-
+    <meta name="description" content="">
     <!-- allows site to act as a native app when saved to the homescreen -->
     <meta name="apple-mobile-web-app-title" content="Queue">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -25,21 +25,20 @@
     <!-- fonts -->
     <link href='http://fonts.googleapis.com/css?family=Nixie+One' rel='stylesheet' type='text/css'>
 
-    {{BASE_TAG}}
+    {{content-for 'head'}}
 
     <link rel="stylesheet" href="assets/vendor.css">
     <link rel="stylesheet" href="assets/queue.css">
+
+    {{content-for 'head-footer'}}
   </head>
   <body>
-    <script>
-      window.QueueENV = {{ENV}};
-      window.EmberENV = window.QueueENV.EmberENV;
-    </script>
+    {{content-for 'body'}}
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
     <script src="assets/vendor.js"></script>
     <script src="assets/queue.js"></script>
-    <script>
-      window.Queue = require('queue/app')['default'].create(QueueENV.APP);
-    </script>
+
+    {{content-for 'body-footer'}}
   </body>
 </html>
