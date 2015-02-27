@@ -22,9 +22,18 @@ module.exports = function(environment) {
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
-    // ENV.APP.LOG_TRANSITIONS = true;
+    ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.contentSecurityPolicy = {
+      'default-src': "'none'",
+      'script-src': "'self' http://cdnjs.cloudflare.com",
+      'font-src': "'self' http://fonts.gstatic.com",
+      'connect-src': "*",
+      'img-src': "'self'",
+      'style-src': "'self' http://fonts.googleapis.com",
+      'media-src': "'self'"
+    }
   }
 
   if (environment === 'test') {
