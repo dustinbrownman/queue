@@ -59,12 +59,14 @@ h2 {
 }
 
 .well {
-  margin-bottom: 10px
+  margin-bottom: 10px;
 }
 
 .question {
   font-family: "Courier New", monospace;
-  margin-top: 20px
+  margin-top: 20px;
+  height: 200px;
+  overflow-y: auto;
 }
 
 #statistics {
@@ -92,6 +94,19 @@ h2 {
 .hourly-tickets-graph {
   height: 200px;
   margin: 20px;
+}
+
+.expanding-tray {
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+          transition: 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+}
+
+.expanded {
+  max-height: 250px;
+  -webkit-transform: translate3d(0,0,0);
+          transform: translate3d(0,0,0);
 }
 
 @media only screen
