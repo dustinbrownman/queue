@@ -9,7 +9,8 @@ var TicketComponent = Ember.Component.extend({
     this.set('scrolling', true);
   },
 
-  touchEnd: function() {
+  touchEnd: function(event) {
+    event.preventDefault(); // because chrome mobile likes to do things differently
     if (!this.get('scrolling')) {
       this.toggleExpanded();
     }
