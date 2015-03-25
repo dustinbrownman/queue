@@ -1,13 +1,7 @@
 <li class="list-group-item">
   <div>
-    <span {{bind-attr class=":elipse :pull-right isExpanded:rotate"}}>. . .</span>
+    <h4 class="pull-right text-muted">></h4>
     <span class="student-name">{{ticket.student}}</span><br>
     {{time-ago time=ticket.createdAt}}
-    <div {{bind-attr class=":expanding-tray isExpanded:expanded"}}>
-      <div class="well question">
-        <p>{{ticket.question}}</p>
-      </div>
-      <button class="btn btn-danger btn-sm pull-right" {{action "closeTicket"}}>close</button>
-    </div>
   </div>
 </li>

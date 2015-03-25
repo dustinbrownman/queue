@@ -1,8 +1,6 @@
 import Ember from 'ember';
 
 var TicketComponent = Ember.Component.extend({
-  isExpanded: false,
-
   scrolling: false,
 
   touchMove: function() {
@@ -12,18 +10,20 @@ var TicketComponent = Ember.Component.extend({
   touchEnd: function(event) {
     event.preventDefault(); // because chrome mobile likes to do things differently
     if (!this.get('scrolling')) {
-      this.toggleExpanded();
+      this.transitionToTicket();
     }
     this.set('scrolling', false);
   },
 
   click: function() {
-    this.toggleExpanded();
+    this.transitionToTicket();
   },
 
-  toggleExpanded: function() {
-    var isExpanded = this.get('isExpanded');
-    this.set('isExpanded', !isExpanded);
+  transitionToTicket: function() {
+    var ticket = this.get('ticket');
+    var controller = this.get('queueController');
+    console.log(controller);
+    controller.transitionToRoute('ticket-details', ticket);
   },
 
   actions: {
