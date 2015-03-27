@@ -1,3 +1,10 @@
-{{model.student}}
+<div class="ticket-details">
+  <div class="container">
+    <h3>{{model.student}}</h3>
 
-{{model.question}}
+    <div class="well question">
+      {{model.question}}
+    </div>
+    {{#link-to 'queue'}}Back{{/link-to}}
+  </div>
+</div>

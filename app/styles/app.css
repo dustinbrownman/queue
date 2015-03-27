@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: #ecf0f1;
+  background-color: white;
   font-family: 'Nixie One', cursive;
   padding-top: 50px;
 }
@@ -18,6 +18,12 @@ h2 {
   padding-top: 9px;
   background-color: #f05a26;
   color: #fefefe;
+}
+
+.ticket-details {
+  background-color: white;
+  height: 100%;
+  padding-bottom: 50px;
 }
 
 .btn-danger {
