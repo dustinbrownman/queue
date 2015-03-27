@@ -1,6 +1,6 @@
 export default function(){
   this.transition(
-    this.fromRoute('queue'),
+    this.fromRoute('queue.index'),
     this.toRoute('ticket-details'),
     this.use('toLeft'),
     this.reverse('toRight')
@@ -11,5 +11,5 @@ export default function(){
     this.toRoute('statistics'),
     this.use('toUp'),
     this.reverse('toDown')
-  )
-};
+  );
+}
