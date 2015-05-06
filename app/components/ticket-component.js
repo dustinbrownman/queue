@@ -22,8 +22,7 @@ var TicketComponent = Ember.Component.extend({
   transitionToTicket: function() {
     var ticket = this.get('ticket');
     var controller = this.get('queueController');
-    console.log(controller);
-    controller.transitionToRoute('ticket-details', ticket);
+    controller.transitionToRoute('queue.ticket-details', ticket);
   },
 
   actions: {

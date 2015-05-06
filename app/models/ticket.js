@@ -4,8 +4,8 @@ import DS from 'ember-data';
 var Ticket = DS.Model.extend({
   student: DS.attr('string'),
   open: DS.attr('boolean'),
-  createdAt: DS.attr('date'),
-  closedAt: DS.attr('date'),
+  createdAt: DS.attr('number'),
+  closedAt: DS.attr('number'),
   question: DS.attr('string'),
 
   waitTime: function() {

@@ -5,6 +5,8 @@
     <div class="well question">
       {{model.question}}
     </div>
-    {{#link-to 'queue'}}Back{{/link-to}}
+    {{#link-to 'queue.index'}}Back{{/link-to}}
+
+    <button class="btn btn-danger pull-right" {{action 'closeTicket'}}>close</button>
   </div>
 </div>

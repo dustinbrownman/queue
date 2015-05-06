@@ -1,4 +1,3 @@
-/* globals moment */
 import Ember from 'ember';
 
 var StatisticsController = Ember.ArrayController.extend({
@@ -6,22 +5,12 @@ var StatisticsController = Ember.ArrayController.extend({
     return this.get('averageWaitTime') <= 120;
   }.property('model.@each.open'),
 
-  todaysClosedTickets: function() {
-    var this_day = moment().date();
-    var this_month = moment().month();
-    var this_year = moment().year();
-    return this.get('model').filter(function(ticket) {
-      var createdAt = moment(ticket.get('createdAt'));
-      return createdAt.date() === this_day && createdAt.month() === this_month && createdAt.year() === this_year && !ticket.get('open');
-    });
-  }.property('model.@each.open'),
-
   numberOfTickets: function() {
-    return this.get('todaysClosedTickets').length;
+    return this.get('model.length');
   }.property('model.@each.open'),
 
   averageWaitTime: function() {
-    var waitTimes = this.get('todaysClosedTickets').map(function(ticket) {
+    var waitTimes = this.get('model').map(function(ticket) {
       return ticket.get('waitTime');
     });
 
@@ -38,7 +27,7 @@ var StatisticsController = Ember.ArrayController.extend({
 
   graphData: function() {
     var graphData = [];
-    var todaysTickets = this.get('todaysClosedTickets');
+    var todaysTickets = this.get('model');
 
     todaysTickets.forEach(function(ticket) {
       var hourNumber = ticket.get('hour');
@@ -65,7 +54,7 @@ var StatisticsController = Ember.ArrayController.extend({
       return a.hourNumber - b.hourNumber;
     });
   // needs to return something like this [{hour: '8am', tickets: 5}, {hour: '9am', tickets: 7}]
-  }.property('model.@each.open')
+}.property('model.@each.open')
 });
 
 export default StatisticsController;

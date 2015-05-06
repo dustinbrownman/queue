@@ -1,7 +1,7 @@
 <ul class="list-group queue">
-  {{#each ticket in openTickets}}
+  {{#each ticket in model}}
     {{ticket-component ticket=ticket queueController=controller}}
   {{/each}}
 </ul>
 
-<p class="text-center text-muted">{{#link-to 'statistics'}}View today's statistics{{/link-to}}</p>
+<p class="text-center text-muted">{{#link-to 'queue.statistics'}}View today's statistics{{/link-to}}</p>
