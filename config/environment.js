@@ -4,6 +4,8 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'queue',
     environment: environment,
+    contentSecurityPolicy: { 'connect-src': "'self' wss://*.firebaseio.com" },
+    firebase: 'https://ember-queue.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
