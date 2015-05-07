@@ -1,16 +1,12 @@
 import Ember from 'ember';
 
 var ApplicationController = Ember.Controller.extend({
-  onQueue: function() {
-    return this.get('currentPath') === 'queue';
+  nestedInQueue: function() {
+    return this.get('currentPath') === 'queue.ticket-details';
   }.property('currentPath'),
   actions: {
     goBack: function() {
-      console.log(this.get('currentPath'));
       this.transitionTo('queue');
-    },
-    hello: function() {
-      alert('hello');
     }
   }
 });

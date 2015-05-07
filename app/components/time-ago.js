@@ -9,7 +9,7 @@ var TimeAgo = Ember.Component.extend({
   },
 
   startGlobalTime: function() {
-    this.set('now', Date.now());
+    this.set('now', new Date());
     Ember.run.later(this, this.startGlobalTime, 2000);
   },
 
