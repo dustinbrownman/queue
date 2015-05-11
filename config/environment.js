@@ -51,7 +51,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.baseUrl = '/#/'
+    ENV.locationType = 'hash';
   }
 
   return ENV;
