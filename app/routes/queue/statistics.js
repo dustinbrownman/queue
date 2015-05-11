@@ -7,7 +7,7 @@ var StatisticsRoute = Ember.Route.extend({
       orderBy: 'createdAt',
       startAt: moment().startOf('day').valueOf()
     }, function(ticket) {
-      return !ticket.open;
+      return !ticket.get('open');
     });
   }
 });
