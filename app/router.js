@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('queue', function() {
     this.route('ticket-details', { path: '/ticket-details/:ticket_id' });
     this.route('statistics');
+    this.route('tv');
   });
 });
 

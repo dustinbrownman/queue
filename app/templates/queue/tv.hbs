@@ -1,0 +1,10 @@
+<ul class="list-group queue tv">
+  {{#each ticket in model}}
+    <li class="list-group-item">
+      <div>
+        <h4 class="pull-right">{{time-ago time=ticket.createdAt}}</h4>
+        <h1>{{ticket.student}}</h1>
+      </div>
+    </li>
+  {{/each}}
+</ul>
