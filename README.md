@@ -7,6 +7,8 @@ _This is a port of my
 [ember-queue](http://github.com/dustinbrownman/ember-queue) project to Ember
 CLI._
 
+See an example at [ember-queue.firebaseapp.com](https://ember-queue.firebaseapp.com).
+
 ## Installation
 
 * `git clone` this repository
@@ -17,7 +19,7 @@ CLI._
 ## Running
 
 * `ember server`
-* Visit your app at http://localhost:4200
+* Visit http://localhost:4200
 
 ## Building
 
@@ -37,4 +39,4 @@ doesn't have to come over anymore. __DONE__
 - As a teacher, I want to see statistics on how long tickets are staying open so
 I know if I'm reaching students in a timely manner. __DONE__
 - As a teacher, I want to be able to navigate between the queue and statistics so
-I can easily switch back and forth.
+I can easily switch back and forth. __DONE__
