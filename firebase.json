@@ -1,9 +1,0 @@
-{
-  "firebase": "ember-queue",
-  "public": "dist/",
-  "ignore": [
-    "firebase.json",
-    "**/.*",
-    "**/node_modules/**"
-  ]
-}
